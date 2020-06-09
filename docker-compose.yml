@@ -1,4 +1,4 @@
-version: "2"
+version: "3.3"
 
 services:
   postgres-slave:
@@ -9,6 +9,7 @@ services:
       - postgres-master
     env_file:
       - ./postgres.env
+# Removed slave Postgres
       - ./postgres-slave.env
     volumes:
       - 'pg-slave:/var/lib/postgresql/data'
@@ -41,10 +42,12 @@ services:
     links:
       - "ethereum"
       - "postgres-master"
-      - "postgres-slave"
+# Removed slave Postgres
+#      - "postgres-slave"
     volumes:
       - .:/host
 
 volumes:
   pg: ./master
-  pg-slave: ./slave
+# Removed slave Postgres
+#  pg-slave: ./slave
