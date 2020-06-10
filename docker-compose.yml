@@ -1,18 +1,18 @@
 version: "3.3"
 
 services:
-  postgres-slave:
-    image: "nebirhos/postgres-replication"
-    ports:
-      - 5433:5432
-    links:
-      - postgres-master
-    env_file:
-      - ./postgres.env
+#  postgres-slave:
+#    image: "nebirhos/postgres-replication"
+#    ports:
+#      - 5433:5432
+#    links:
+#      - postgres-master
+#    env_file:
+#      - ./postgres.env
 # Removed slave Postgres
 #      - ./postgres-slave.env
-    volumes:
-      - 'pg-slave:/var/lib/postgresql/data'
+#    volumes:
+#      - 'pg-slave:/var/lib/postgresql/data'
 
   postgres-master:
     image: "nebirhos/postgres-replication"
