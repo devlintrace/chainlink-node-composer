@@ -10,7 +10,7 @@ services:
     env_file:
       - ./postgres.env
 # Removed slave Postgres
-      - ./postgres-slave.env
+#      - ./postgres-slave.env
     volumes:
       - 'pg-slave:/var/lib/postgresql/data'
 
